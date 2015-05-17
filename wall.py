@@ -5,7 +5,7 @@ import sys
 import subprocess
 
 def main():
-    playlist = "/home/anjan/.fehbg"
+    playlist = "/home/YOURUSER/.fehbg"
     playlist = os.path.expanduser(playlist)
     
     with open(playlist) as fin:
