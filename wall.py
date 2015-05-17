@@ -5,7 +5,7 @@ import sys
 import subprocess
 
 def main():
-    playlist = "/home/YOURUSER/.fehbg"
+    playlist = "~/.fehbg"
     playlist = os.path.expanduser(playlist)
     
     with open(playlist) as fin:
@@ -21,7 +21,7 @@ def main():
 
     wallpapers.pop(0) 
             
-    screen = int(input("On what screen is the wallpaper you wish to remove?"))
+    screen = int(input("On what screen is the wallpaper you wish to remove? "))
     
     if screen == 1 :
         p = subprocess.Popen(["/bin/feh", wallpapers[0]])
@@ -34,20 +34,21 @@ def main():
         ask_and_delete(wallpapers[screen])
 
 def ask_and_delete(wall):
-    delete = input("was that the wallpaper you wanted to delete? [yes/no]")
+    delete = input("was that the wallpaper you wanted to delete? [yes/no] ")
     
     if delete == "yes":
         os.remove(wall)
     elif delete == "no":
-        wrongscreen = input("Wrong screen? Yes to select again. No to quit. [yes/no]")
+        wrongscreen = input("Wrong screen? Yes to select again. No to quit. [yes/no] ")
         if wrongscreen == "yes":
             main()
         elif wrongscreen == "no":
             sys.exit(0) 
         else:
-         print("Please choose yes or no")   
+         print("Please choose yes or no ")   
+
     else:
-        print("Please choose yes or no")
+        print("Please choose yes or no ")
 
 if __name__=="__main__":
     main()
