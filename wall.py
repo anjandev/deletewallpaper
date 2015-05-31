@@ -19,11 +19,15 @@ def main():
         for walls in lists:
             wallpapers.append(walls)
 
+    wallpapers.pop(0)
     wallpapers.pop(0) 
-            
+
     screen = int(input("On what screen is the wallpaper you wish to remove? "))
     
-    if screen == 1 :
+    if screen == 0:
+        print("I think you mean screen 1")
+
+    elif screen == 1 :
         p = subprocess.Popen(["/bin/feh", wallpapers[0]])
         returncode = p.wait()
         ask_and_delete(wallpapers[0])
