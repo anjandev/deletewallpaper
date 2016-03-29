@@ -22,6 +22,10 @@ def main():
     wallpapers.pop(0)
     wallpapers.pop(0) 
 
+    #pop out spaces in list
+    while(' ' in wallpapers):
+        wallpapers.remove(' ') 
+
     screen = int(input("On what screen is the wallpaper you wish to remove? "))
     
     if screen == 0:
