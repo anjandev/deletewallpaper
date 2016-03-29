@@ -37,6 +37,8 @@ def main():
         ask_and_delete(wallpapers[0])
 
     else:
+        # move user entered number one over since zero indexed
+        screen = screen - 1
         p = subprocess.Popen(["/bin/feh", wallpapers[screen]])
         returncode = p.wait()
         ask_and_delete(wallpapers[screen])
